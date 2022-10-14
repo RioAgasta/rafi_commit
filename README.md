@@ -1,6 +1,4 @@
-# malenanjing
-
-Nyobain git ygy
+# malen
 
 ## Getting Started
 
