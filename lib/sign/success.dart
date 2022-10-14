@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Malenochinchin/aletempik.dart';
+import 'package:Project/index.dart';
 
 
 class berhasil extends StatefulWidget {

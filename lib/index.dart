@@ -1,11 +1,12 @@
-import 'package:Malenochinchin/home.dart';
-import 'package:Malenochinchin/tugas.dart';
-import 'package:Malenochinchin/yard.dart';
+import 'package:Project/home.dart';
+import 'package:Project/widget/tugas.dart';
+import 'package:Project/widget/yard.dart';
 import 'package:flutter/material.dart';
-import 'package:Malenochinchin/ui.dart';
-import 'package:Malenochinchin/box.dart';
-import 'package:Malenochinchin/doc.dart';
-import 'package:Malenochinchin/succ.dart';
+import 'package:Project/ui_helper/ui.dart';
+import 'package:Project/widget/box.dart';
+import 'package:Project/widget/doc.dart';
+import 'package:Project/sign/success.dart';
+import 'package:Project/widget/Basement.dart';
 
 class aletempik extends StatefulWidget {
   const aletempik({Key? key}) : super(key: key);
@@ -28,10 +29,15 @@ class _aletempikState extends State<aletempik> {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => const dokumen()));
   }
 
+  void _navigationToBasement(BuildContext context){
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Basement()));
+  }
+
   static const List<Widget> pageList = [
     task(),
     mainbox(),
     dokumen(),
+    Basement(),
   ];
 
   int seletorIndex = 0;
@@ -46,6 +52,7 @@ class _aletempikState extends State<aletempik> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.account_balance_sharp),
@@ -58,6 +65,10 @@ class _aletempikState extends State<aletempik> {
           BottomNavigationBarItem(
             icon: Icon(Icons.accessible),
             label: "Dokumen supersemar",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_balance),
+            label: "Basement",
           ),
         ],
         currentIndex: seletorIndex,

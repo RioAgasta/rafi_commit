@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:Malenochinchin/aletempik.dart';
-import 'package:Malenochinchin/ui.dart';
-import 'package:Malenochinchin/sign.dart';
+import 'package:Project/index.dart';
+import 'package:Project/ui_helper/ui.dart';
+import 'package:Project/sign/sign.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

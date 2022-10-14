@@ -1,5 +1,6 @@
-import 'package:Malenochinchin/ui.dart';
+import 'package:Project/ui_helper/ui.dart';
 import 'package:flutter/material.dart';
+import '../data/shared_prefs.dart';
 
 
 class mainbox extends StatefulWidget {
@@ -12,7 +13,16 @@ class mainbox extends StatefulWidget {
 class _mainboxState extends State<mainbox> {
   int _listcount = 1;
 
+  void loadValues() async{
+    _listcount = (await SharedPrefs.getInt('intValue'))!;
+    setState(() {});
+  }
 
+  @override
+  void initState() {
+    super.initState();
+    loadValues();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,10 +37,36 @@ class _mainboxState extends State<mainbox> {
               ElevatedButton(onPressed: (){
                 setState(() {
                   _listcount++;
+                  SharedPrefs.setInt('intValue', _listcount);
+                  loadValues();
                 });
               },
                 child: Text(
-                    "Add list"
+                    "add list"
+                ),
+              ),
+              ElevatedButton(onPressed: (){
+                setState(() {
+                  if (_listcount > 1){
+                    _listcount--;
+                    SharedPrefs.setInt('intValue', _listcount);
+                    loadValues();
+                  }
+                });
+              },
+                child: Text(
+                    "decrese list"
+                ),
+              ),
+              ElevatedButton(onPressed: (){
+                setState(() {
+                  _listcount = 1;
+                  SharedPrefs.setInt('intValue', _listcount);
+                  loadValues();
+                });
+              },
+                child: Text(
+                    "reset list"
                 ),
               ),
               ListView.builder(

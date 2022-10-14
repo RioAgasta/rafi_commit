@@ -1,5 +1,6 @@
-import 'package:Malenochinchin/ui.dart';
+import 'package:Project/ui_helper/ui.dart';
 import 'package:flutter/material.dart';
+import '../data/shared_prefs.dart';
 
 
 class yard extends StatefulWidget {
@@ -10,6 +11,17 @@ class yard extends StatefulWidget {
 }
 
 class _yardState extends State<yard> {
+
+
+  void loadValues(){
+
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadValues();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Malenochinchin/ui.dart';
+import 'package:Project/ui_helper/ui.dart';
 
 class hero extends StatefulWidget {
   const hero({Key? key}) : super(key: key);
